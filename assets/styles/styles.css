@@ -8,18 +8,21 @@ html{
     overflow-x: hidden;
 }
 body{
-    /*background-image: radial-gradient(circle,rgba(133, 199, 244, 1),rgba(159, 243, 177, 1));*/
-    background-color: red;
+  background-image: radial-gradient(circle,rgba(133, 199, 244, 1),rgba(159, 243, 177, 1));
 }
 h1{
     font-size: 2.25rem;
     text-transform: capitalize;
+    font-weight: 700;
 }
 h2{
     font-size: 1.8rem;
+    font-weight: 400;
+    font-family: sans-serif;
 }
 p{
-    font-size: 1.2rem;
+    font-size:1.2rem;
+    line-height: 1.2;
 }
 :root{
     --primary-color:black;
@@ -125,16 +128,14 @@ nav{
     flex-direction: column;
     margin-top: 6rem;
 }
-.hero-left h3{
-    color: rgb(49, 49, 49);
+.hero-left p{
     text-wrap: balance;
 }
-.hero-left h1,h3{
+.hero-left h1,p{
     margin-bottom: 1rem;
 }
 .hero-left h1{
     color:var(--second-primary-color);
-    font-size: 2.25rem;
     font-family: serif;
 }
 .hero-right{
@@ -239,10 +240,6 @@ nav{
 }
 .about-me-wrapper .words{
     flex: 1;
-}
-.about-me-wrapper .words p{
-    font-size: 1.1rem;
-    line-height: 1.3;
 }
 .words p{
     margin-bottom: 1rem;
@@ -419,6 +416,10 @@ nav{
   background-color: rgba(230, 255, 230, 1);
   padding: 1rem;
 }
+.services-item:hover{
+  border: solid var(--second-primary-color) 1px;
+  transition: .3s;
+}
 .item-1{
   grid-column-start: 1;
   grid-column-end: 3;
@@ -459,10 +460,11 @@ nav{
   animation-timeline: view();
   animation-range: entry 50% cover 30%;
 }
-.testimonial-container h2{
+.testimonial-container h1{
   text-align: center;
   text-transform: capitalize;
   color: var(--second-primary-color);
+  margin-top: 1rem;
 }
 .item-container{
   display: flex;
@@ -487,6 +489,28 @@ nav{
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  padding: 0 3rem;
+}
+.testimonial-item .talks{
+  position: relative;
+  &::before{
+    position: absolute;
+    left: -2.2rem;
+    top: -1.2rem;
+    content: "\201C";
+    font-size: 4rem;
+    color: var(--third-primary-color);
+  }
+  &::after{
+    position: absolute;
+    content: "\201D";
+    font-size: 4rem;
+    color: var(--third-primary-color);
+  }
+}
+.testimonial-item:hover{
+  transform:translate(8px);
+  transition: .3s;
 }
 .div-flex{
   display: flex;
@@ -507,6 +531,8 @@ nav{
 .div-flex h4{
   font-size: 1.2rem;
 }
+
+
 .services-sub-container{
   animation: fades both linear;
   animation-timeline: view();
@@ -560,7 +586,10 @@ nav{
   resize: none;
   border: none;
 }
-.inputs input[type="text"], input[type="password"], textarea{ 
+.inputs button:hover{
+  border: solid var(--second-primary-color) 1px;
+}
+.inputs input, textarea{ 
   outline: none;
 }
 .inputs textarea:focus{
@@ -583,33 +612,32 @@ nav{
 }
 .item-grids{
   display: grid;
-  grid-template-columns: 5rem 15rem;
+  grid-template-columns: 3rem 15rem;
   color: white;
   align-items: center;
-  margin-bottom: 1.5rem;
+  
 }
 .icon-add i{
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 .item-container-2{
   padding: 2rem;
 }
 .social-media-icons-add{
-  width: 16rem;
-  height: 6rem;
+  width: 10rem;
   justify-content: space-between;
 }
 .social-media-icons-add .icon{
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
 }
 .grid-icon i{
-  font-size: 2rem;
+  font-size: 1.2rem;
   color: var(--third-primary-color);
 }
 .grid-icon{
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
 }
 .grid-icon:hover i{
   color: var(--second-primary-color);
@@ -667,6 +695,7 @@ footer{
 }
 .footer-navs li{
   list-style: none;
+  margin-left: 1rem;
 }
 .footer-navs a{
   text-decoration: none;
@@ -711,7 +740,6 @@ footer{
   }
   .timeline ul li:nth-child(even) div {
     left: -399px;
-    /*250+45-6*/
   }
 }
 @media screen and (max-width: 800px) {
@@ -779,6 +807,11 @@ footer{
   .item-8{
     grid-column-start: 4;
     grid-column-end: 7;
+  }
+}
+@media screen and (max-width:480px){
+  h1{
+    font-size: 2rem;
   }
 }
 @media screen and (max-width:450px){
@@ -862,7 +895,7 @@ footer{
         color: var(--third-primary-color);
     }
     .navbar-links li a{
-        color: var(--third-primary-color);
+        color: var(--third-primary-color) !important;
         padding-right: 0;
     }
     .toggle-button {
@@ -888,8 +921,20 @@ footer{
     }
     .navbar-links li:hover{
         width: 100%;
-        background-color: var(--second-black);
+        background-color: var(--second-primary-color);
     }
+    .navbars li a::after{
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color:var(--second-black);
+      display: block;
+      visibility: hidden;
+  }
+  .navbars li a:hover:after{
+      width: 100%;
+      transition: .3s ease-in-out;
+  }
     .toggle-button i{
         color:var(--third-primary-color);
     }
