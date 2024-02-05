@@ -488,17 +488,18 @@ nav{
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 0 3rem;
+  
 }
 .testimonial-item .talks{
   position: relative;
+  margin-left: 1rem;
+  margin-right: 1rem;
   &::before{
     position: absolute;
-    left: -2.2rem;
-    top: -1.2rem;
+    left: -1.7rem;
+    top: -1rem;
     content: "\201C";
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--third-primary-color);
   }
   &::after{
@@ -615,7 +616,6 @@ nav{
   grid-template-columns: 3rem 15rem;
   color: white;
   align-items: center;
-  
 }
 .icon-add i{
   font-size: 1.2rem;
@@ -628,16 +628,19 @@ nav{
   justify-content: space-between;
 }
 .social-media-icons-add .icon{
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.item-grids .number p{
+  margin-bottom: 0;
 }
 .grid-icon i{
   font-size: 1.2rem;
   color: var(--third-primary-color);
 }
 .grid-icon{
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 .grid-icon:hover i{
   color: var(--second-primary-color);
