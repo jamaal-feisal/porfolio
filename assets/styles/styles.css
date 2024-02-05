@@ -492,20 +492,12 @@ nav{
 }
 .testimonial-item .talks{
   position: relative;
-  margin-left: 1rem;
-  margin-right: 1rem;
   &::before{
     position: absolute;
-    left: -1.7rem;
-    top: -1rem;
+    left: -.3rem;
+    top: -2.8rem;
     content: "\201C";
-    font-size: 3rem;
-    color: var(--third-primary-color);
-  }
-  &::after{
-    position: absolute;
-    content: "\201D";
-    font-size: 3rem;
+    font-size: 4.5rem;
     color: var(--third-primary-color);
   }
 }
