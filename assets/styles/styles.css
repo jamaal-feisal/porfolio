@@ -367,7 +367,7 @@ nav{
 }
 .skills-section div{
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 2fr 2fr;
   grid-template-rows: repeat(3,1fr);
   row-gap: 1.3rem;
   column-gap: 1.5rem;
@@ -505,7 +505,7 @@ nav{
   &::after{
     position: absolute;
     content: "\201D";
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--third-primary-color);
   }
 }
@@ -730,9 +730,15 @@ footer{
   justify-content: center;
   margin-top: 2rem;
 }
-
-
-
+.copyrights .dev-link{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--third-second-primary-color);
+}
+.copyrights .dev-link:hover{
+  color: var(--fourth-primary-color);
+  transition: .3s;
+}
 
 
 
